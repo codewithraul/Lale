@@ -1,0 +1,781 @@
+/* =====================================================
+   SURPRISE WEBSITE
+   Author : Raul
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+background:
+linear-gradient(180deg,#020617,#071226,#0b1731);
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+
+/* ===========================
+CANVAS
+=========================== */
+
+#space{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+z-index:-10;
+
+}
+
+/* ===========================
+BLUR LIGHTS
+=========================== */
+
+.blur{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+pointer-events:none;
+
+z-index:-9;
+
+animation:moveLight 12s ease-in-out infinite alternate;
+
+}
+
+.blur1{
+
+width:420px;
+
+height:420px;
+
+background:rgba(0,153,255,.25);
+
+left:-180px;
+
+top:-120px;
+
+}
+
+.blur2{
+
+width:360px;
+
+height:360px;
+
+background:rgba(162,89,255,.22);
+
+right:-150px;
+
+bottom:-150px;
+
+animation-delay:4s;
+
+}
+
+@keyframes moveLight{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(140px,90px);
+
+}
+
+}
+
+/* ===========================
+LOADER
+=========================== */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#020617;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+gap:25px;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+.loader-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:6px solid rgba(255,255,255,.15);
+
+border-top:6px solid white;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ===========================
+SECTION
+=========================== */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+}
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.glass{
+
+width:100%;
+
+max-width:900px;
+
+padding:50px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35);
+
+transition:.45s;
+
+}
+
+.glass:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 35px 90px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+HEADINGS
+=========================== */
+
+h1{
+
+font-size:60px;
+
+font-weight:700;
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+h2{
+
+font-size:36px;
+
+font-weight:600;
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:20px;
+
+line-height:1.9;
+
+text-align:center;
+
+color:rgba(255,255,255,.92);
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+button{
+
+margin-top:30px;
+
+padding:18px 42px;
+
+border:none;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#fff;
+
+background:
+
+linear-gradient(90deg,#4F8CFF,#8A5CFF);
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 30px rgba(79,140,255,.35);
+
+}
+
+button:hover{
+
+transform:
+
+translateY(-4px)
+scale(1.05);
+
+box-shadow:
+
+0 20px 40px rgba(138,92,255,.45);
+
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+text-align:center;
+
+}
+
+#typing{
+
+margin-top:20px;
+
+min-height:120px;
+
+}
+
+/* ===========================
+PHOTO
+=========================== */
+
+.photo-frame{
+
+width:100%;
+
+max-width:250px;
+
+margin:auto;
+
+overflow:hidden;
+
+border-radius:24px;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.4);
+
+}
+
+.photo-frame img{
+
+width:100%;
+
+display:block;
+
+transition:.7s;
+
+}
+
+.photo-frame:hover img{
+
+transform:scale(1.05);
+
+}
+
+/* ===========================
+SLIDER
+=========================== */
+
+.controls{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-top:30px;
+
+}
+
+.controls button{
+
+width:65px;
+
+height:65px;
+
+padding:0;
+
+font-size:24px;
+
+}
+
+/* ===========================
+MESSAGE
+=========================== */
+
+.message-text{
+
+font-size:22px;
+
+line-height:2;
+
+}
+
+/* ===========================
+FINAL
+=========================== */
+
+.final button{
+
+margin-top:35px;
+
+}
+/* =====================================================
+   REVEAL EFFECT
+===================================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* =====================================================
+   FADE ANIMATION
+===================================================== */
+
+.fade{
+
+animation:fadeIn 1.2s ease;
+
+}
+
+@keyframes fadeIn{
+
+0%{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+   FLOATING IMAGE
+===================================================== */
+
+.photo-frame img{
+
+animation:floatingPhoto 7s ease-in-out infinite alternate;
+
+}
+
+@keyframes floatingPhoto{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.06);
+
+}
+
+}
+
+/* =====================================================
+   HERO BUTTON
+===================================================== */
+
+#startButton{
+
+display:inline-block;
+
+margin-top:35px;
+
+}
+
+/* =====================================================
+   FINISH BUTTON
+===================================================== */
+
+#finishButton{
+
+margin-top:30px;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#06111d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+#4F8CFF,
+#8A5CFF);
+
+border-radius:50px;
+
+}
+
+/* =====================================================
+   TEXT SELECTION
+===================================================== */
+
+::selection{
+
+background:#4F8CFF;
+
+color:white;
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+.glass{
+
+padding:30px;
+
+border-radius:24px;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+h2{
+
+font-size:30px;
+
+}
+
+p{
+
+font-size:17px;
+
+}
+
+.message-text{
+
+font-size:18px;
+
+}
+
+.controls button{
+
+width:55px;
+
+height:55px;
+
+font-size:20px;
+
+}
+
+button{
+
+font-size:16px;
+
+padding:16px 30px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+section{
+
+padding:20px;
+
+}
+
+.glass{
+
+padding:22px;
+
+}
+
+h1{
+
+font-size:32px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.message-text{
+
+font-size:16px;
+
+}
+
+.photo-frame{
+
+border-radius:18px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+.controls{
+
+gap:10px;
+
+}
+
+.controls button{
+
+width:50px;
+
+height:50px;
+
+}
+
+}
+/* ===========================
+   CENTER BUTTON
+=========================== */
+
+.hero button,
+.final button{
+
+    display:block;
+
+    margin:35px auto 0 auto;
+
+    padding:18px 55px;
+
+    font-size:20px;
+
+    letter-spacing:1px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #4F8CFF,
+        #A855F7
+    );
+
+    box-shadow:
+    0 10px 35px rgba(79,140,255,.45);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Hover effekti */
+
+/* ===========================
+   CENTER BUTTON FIX
+=========================== */
+
+#startButton,
+#finishButton{
+
+    display:block;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    margin-top:35px;
+
+}
+
+
+/* Parıltı effekti */
+
+.hero button::before,
+.final button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+
+.hero button:hover::before,
+.final button:hover::before{
+
+    left:100%;
+
+}
+.hero .glass,
+.final .glass{
+
+    text-align:center;
+
+}
