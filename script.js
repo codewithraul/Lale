@@ -326,7 +326,7 @@ finish.onclick=()=>{
 
 
 alert(
-"Lalə, ümid edirəm bu kiçik sürpriz üzündə təbəssüm yaratdı 😊\n\n— Raul"
+"Ümid edirəm bu kiçik sürpriz üzündə təbəssüm yaratdı 😊\n\n— Raul"
 );
 
 
